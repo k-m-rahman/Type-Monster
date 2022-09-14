@@ -33,9 +33,7 @@ const typeController = (e) => {
   if(display.lastChild){
      return display.removeChild(display.lastChild);
   }
-    
-    
-    
+       
   }
 
   // these are the valid character we are allowing to type

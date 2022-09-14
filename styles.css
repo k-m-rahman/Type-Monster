@@ -69,7 +69,8 @@ main{
 }
 
 #display {
-  height: 100px;
+  height: auto;
+  min-height: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

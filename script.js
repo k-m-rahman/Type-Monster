@@ -12,12 +12,15 @@ let startTime;
 let questionText = "";
 
 // Load and display question
-fetch("./texts.json")
+const fetchQuestion = () => {
+  fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
   });
+}
+
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
@@ -100,6 +103,7 @@ const closeModal = () => {
 };
 
 const start = () => {
+  
   // If already started, do not start again
   if (startTime) return;
 
@@ -123,8 +127,11 @@ const start = () => {
   }, 1000);
 };
 
+fetchQuestion() ;
 // START Countdown
-startBtn.addEventListener("click", start);
+startBtn.addEventListener("click", function(){
+  start();
+});
 
 // If history exists, show it
 displayHistory();

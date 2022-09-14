@@ -47,7 +47,9 @@ const typeController = (e) => {
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
-  } else {
+  }
+  else {
+    errorCount++ ;
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
@@ -103,7 +105,6 @@ const closeModal = () => {
 };
 
 const start = () => {
-  
   // If already started, do not start again
   if (startTime) return;
 

@@ -5,6 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      table {
+        border: 2px solid rgba(255, 252, 252, 0.593);
+        border-collapse: collapse;
+        box-shadow: 0px 0px 8px rgb(255, 255, 255, 0.5);
+      }
+      th,
+      td,
+      tr {
+        border: 1px solid white;
+        padding: 7px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1
+      style="
+        text-align: center;
+        margin-top: 20px;
+        color: aliceblue;
+        letter-spacing: 3px;
+      "
+    >
+      Blogs
+    </h1>
+    <div id="blog-container">
+      <!-- local vs session storage -->
+      <div class="card" style="justify-content: center; gap: 20px;">
+        <h3>Local Storage vs Session Storage</h3>
+        <table>
+          <tr>
+            <th>Local Storage</th>
+            <th>Session Storage</th>
+          </tr>
+          <tr>
+            <td>The storage capacity of local storage is 5MB/10MB</td>
+            <td>The storage capacity of session storage is 5MB</td>
+          </tr>
+          <tr>
+            <td>
+              As it is not session-based, it must be deleted via javascript or
+              manually
+            </td>
+            <td>
+              It’s session-based and works per window or tab. This means that
+              data is stored only for the duration of a session, i.e., until the
+              browser (or tab) is closed
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- global scope vs block scope -->
+      <div class="card">
+        <h3>Global Scope vs Local Scope</h3>
+        <p>
+          <span style="font-size: larger; font-weight: bolder; color: bisque"
+            >Global Scope:</span
+          >
+          The variables defined outside of any function or curly brackets are
+          known as global variables and have global scope. Global scope means
+          that the variables can be accessed from any part of that program, any
+          function or conditional state can access that variable.
+        </p>
+        <p >
+          <span style="font-size: larger; font-weight: bolder; color: bisque"
+          >Local Scope:</span
+        >
+        If you were to define some variables inside curly brackets {} or inside
+        a specific function then those variables are called local variables The
+        local variables have a very confined scope which is called the local
+        scope But, with the release of ES6, the local scope was further broken
+        down into two different scopes
+          <ul >
+            <li>Function scope</li>
+            <li>Block scope</li>
+          </ul>
+        </p>
+        <p>
+          <span style="font-size: larger; font-weight: bolder; color: bisque"
+            >Block Scope:</span
+          >
+          Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Event Loop</h3>
+        <p>JavaScript is a single-threaded synchronous programming language.Single-threaded means that the main thread where JavaScript code is run, runs in one line at a time manner and there is no possibility of running code in parallel.When something asynchronus comes in the function execution stack it automatically passes into the WEB API. WEB API then executes that and passes the event/callback function to the queue. An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.This cycle is called the event loop and this how JavaScript manages its events.</p>
+      </div>
+      <div class="card">
+        <h3>Undefined in JavaScript</h3>
+        <p>The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types.We can get undefined value in many ways:
+          <ul style="text-align: left;">
+            <li>variable that is not assigned will give undefined </li>
+            <li>function with no return value </li>
+            <li>in function if any parameter that is not passed will be undefined </li>
+            <li>property that doesn't exists on an object will give undefined </li>
+            <li>accesing array elements outside of the index range will give undefined </li>
+            <li>deleting an element inside an array </li>
+            <li>setting a value directly to undefined</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

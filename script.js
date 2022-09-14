@@ -10,6 +10,7 @@ let userText = "";
 let errorCount = 0;
 let startTime;
 let questionText = "";
+let typingSpeed ;
 
 // Load and display question
 const fetchQuestion = () => {
@@ -77,6 +78,7 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = Math.ceil((finishTime - startTime) / 1000);
+  typingSpeed = Math.ceil((questionText.length/5 - errorCount)/(timeTaken/60)) ;
 
   // show result modal
   resultModal.innerHTML = "";
@@ -91,16 +93,18 @@ const gameOver = () => {
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+    <p style="margin-bottom:5px;">Your typing speed is <span class="bold ">${typingSpeed} wpm</span></p>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken, errorCount , typingSpeed);
 
   // restart everything
   startTime = null;
   errorCount = 0;
   userText = "";
   display.classList.add("inactive");
+  typingSpeed = null ;
 };
 
 const closeModal = () => {
@@ -116,8 +120,11 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
+ 
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
-
+    
+   
+    
     // finished timer
     if (count == 0) {
       // -------------- START TYPING -----------------

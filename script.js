@@ -130,6 +130,7 @@ const start = () => {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
+      countdownOverlay.innerHTML='';
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);

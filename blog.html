@@ -22,6 +22,14 @@
     </style>
   </head>
   <body>
+    <header>
+      <nav id="nav-bar">
+        <h1 class="title"><img src="./logo.png" /></h1>
+        <a id="blog" href="index.html" target="_blank">Home</a>
+      </nav>
+    </header>
+
+
     <h1
       style="
         text-align: center;
@@ -34,7 +42,7 @@
     </h1>
     <div id="blog-container">
       <!-- local vs session storage -->
-      <div class="card" style="justify-content: center; gap: 20px;">
+      <div class="card" style="justify-content: center; gap: 20px; text-align: left;">
         <h3>Local Storage vs Session Storage</h3>
         <table>
           <tr>
@@ -60,7 +68,7 @@
       </div>
 
       <!-- global scope vs block scope -->
-      <div class="card">
+      <div class="card" style="text-align: left;">
         <h3>Global Scope vs Local Scope</h3>
         <p>
           <span style="font-size: larger; font-weight: bolder; color: bisque"
@@ -92,11 +100,14 @@
           Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.
         </p>
       </div>
-      <div class="card">
+      <!-- Event loop  -->
+      <div class="card" style="text-align: left;">
         <h3>Event Loop</h3>
         <p>JavaScript is a single-threaded synchronous programming language.Single-threaded means that the main thread where JavaScript code is run, runs in one line at a time manner and there is no possibility of running code in parallel.When something asynchronus comes in the function execution stack it automatically passes into the WEB API. WEB API then executes that and passes the event/callback function to the queue. An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.This cycle is called the event loop and this how JavaScript manages its events.</p>
       </div>
-      <div class="card">
+
+      <!-- undefined  -->
+      <div class="card" style="text-align: left;">
         <h3>Undefined in JavaScript</h3>
         <p>The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types.We can get undefined value in many ways:
           <ul style="text-align: left;">

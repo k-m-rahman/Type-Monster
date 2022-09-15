@@ -25,7 +25,13 @@ const fetchQuestion = () => {
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
+
+ // handling the space scrolling issue
+  e.key == ' ' ? e.preventDefault() : '';
+  
   const newLetter = e.key;
+
+  TouchScreenKeyboard.open() ;
 
   // Handle backspace press
   if (newLetter == "Backspace") {
@@ -132,7 +138,6 @@ const start = () => {
       countdownOverlay.style.display = "none";
       countdownOverlay.innerHTML='';
       display.classList.remove("inactive");
-
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
